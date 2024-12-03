@@ -14,7 +14,7 @@ class SecondaryButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.green, width: 1.5),
+          border: Border.all(color: Colors.red, width: 1.5),
           color: Colors.white,
         ),
         child: Text(
@@ -23,7 +23,7 @@ class SecondaryButton extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 20,
-            color: Colors.green,
+            color: Colors.red,
           ),
         ),
       ),
