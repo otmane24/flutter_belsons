@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SecondaryButton extends StatelessWidget {
   final Function() onTap;
@@ -10,11 +11,11 @@ class SecondaryButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 8.w),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.red, width: 1.5),
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(color: Colors.red, width: 1.5.w),
           color: Colors.white,
         ),
         child: Text(
@@ -22,7 +23,7 @@ class SecondaryButton extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 20,
+            fontSize: 20.sp,
             color: Colors.red,
           ),
         ),
