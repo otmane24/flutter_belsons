@@ -1,5 +1,7 @@
 library flutter_belsons;
 
+export 'components/buttons/secondary_button.dart';
+
 /// A Calculator.
 class Calculator {
   /// Returns [value] plus 1.
