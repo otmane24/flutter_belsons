@@ -3,28 +3,42 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SecondaryButton extends StatelessWidget {
   final Function() onTap;
-  final String text;
-  const SecondaryButton({required this.onTap, required this.text, super.key});
+  final String title;
+  final Color? color;
+  final Color? borderColor;
+  final double? width;
+  final double? height;
+
+  const SecondaryButton(
+      {required this.onTap,
+      required this.title,
+      this.color,
+      this.borderColor,
+      this.width,
+      this.height,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 8.w),
+        width: width,
+        height: height,
+        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(color: Colors.red, width: 1.5.w),
-          color: Colors.white,
+          border: Border.all(color: borderColor ?? Colors.red, width: 2.w),
+          color: color ?? Colors.white,
         ),
         child: Text(
-          text,
+          title,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 20.sp,
-            color: Colors.red,
+            fontWeight: FontWeight.w600,
+            fontSize: 18.sp,
+            color: borderColor,
           ),
         ),
       ),
