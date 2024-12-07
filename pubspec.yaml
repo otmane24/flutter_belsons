@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.16
   image_picker: ^1.1.2
 
 dev_dependencies:
@@ -23,10 +24,11 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter: null
 
-assets: 
+assets:
   - assets/images/pngs/
-# To add assets to your package, add an assets section, like this:
+  - assets/images/svgs/
 
+# To add assets to your package, add an assets section, like this:
 #
 # For details regarding assets in packages, see
 # https://flutter.dev/to/asset-from-package
