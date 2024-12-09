@@ -4,19 +4,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PrimaryButton extends StatelessWidget {
   final Color? color;
   final Color? backgroundColor;
-  final String title;
+  final String? title;
+  final Widget? child;
   final VoidCallback onTap;
   final double? width;
   final double? height;
   const PrimaryButton({
     super.key,
-    required this.title,
+    this.title,
+    this.child,
     required this.onTap,
     this.width,
     this.height,
     this.color,
     this.backgroundColor,
-  });
+  }) : assert(title == null || child == null,
+            "title and child parameters can't both be null");
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +36,15 @@ class PrimaryButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 18.sp,
-              color: color ?? Colors.white,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
+          child: child ??
+              Text(
+                title!,
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  color: color ?? Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
         ),
       ),
     );
