@@ -82,7 +82,6 @@ class AddPictureDialog {
                   height: 20.h,
                 ),
                 PrimaryButton(
-                  title: mainButtonTitle ?? "Gallery",
                   color: color,
                   backgroundColor: borderColor,
                   onTap: () async {
@@ -105,6 +104,14 @@ class AddPictureDialog {
                       }
                     }
                   },
+                  child: Text(
+                    mainButtonTitle ?? "Gallery",
+                    style: TextStyle(
+                      fontSize: 18.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
                 const Divider(),
                 SecondaryButton(
