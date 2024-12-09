@@ -5,14 +5,13 @@ class PrimaryButton extends StatelessWidget {
   final Color? color;
   final Color? backgroundColor;
 
-  final Widget? child;
+  final Widget child;
   final VoidCallback onTap;
   final double? width;
   final double? height;
   const PrimaryButton({
     super.key,
-
-    this.child,
+    required this.child,
     required this.onTap,
     this.width,
     this.height,
@@ -35,8 +34,7 @@ class PrimaryButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: Center(
-          child: child ,
-              
+          child: child,
         ),
       ),
     );
