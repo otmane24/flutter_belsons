@@ -29,8 +29,8 @@ class PasswordTextField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             contentPadding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 12.h,
+              horizontal: 8.w,
+              vertical: 4.h,
             ),
             suffixIcon: IconButton(
               onPressed: () {
