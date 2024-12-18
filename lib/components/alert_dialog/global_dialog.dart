@@ -14,7 +14,7 @@ class GlobalDialog {
   GlobalDialog(
     this.context, {
     this.secondaryButton,
-    required this.mainButton,
+    this.mainButton,
     required this.title,
     this.description,
     required this.header,
