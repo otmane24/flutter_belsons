@@ -7,7 +7,7 @@ class GlobalDialog {
   final Widget? header;
   final String title;
   final String? description;
-  final Widget mainButton;
+  final Widget? mainButton;
 
   final Widget? secondaryButton;
 
@@ -67,10 +67,11 @@ class GlobalDialog {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                mainButton,
+                if (mainButton != null)
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                if (mainButton != null) mainButton!,
                 if (secondaryButton != null) ...[
                   const Divider(),
                   secondaryButton!
