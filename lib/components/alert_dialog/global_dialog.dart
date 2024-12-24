@@ -35,13 +35,13 @@ class GlobalDialog {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(
-                  height: 24.h,
+                  height: 16.h,
                 ),
                 Center(
                   child: header,
                 ),
                 SizedBox(
-                  height: 18.h,
+                  height: 12.h,
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -73,7 +73,9 @@ class GlobalDialog {
                   ),
                 if (mainButton != null) mainButton!,
                 if (secondaryButton != null) ...[
-                  const Divider(),
+                  Divider(
+                    height: 8.h,
+                  ),
                   secondaryButton!
                 ],
                 SizedBox(
