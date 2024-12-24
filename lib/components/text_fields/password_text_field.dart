@@ -9,6 +9,7 @@ class PasswordTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final String? Function(String?)? validator;
+  final String? Function(String?)? onSave;
 
   final StateCubit stateCubit = StateCubit(true);
   PasswordTextField({
@@ -16,6 +17,7 @@ class PasswordTextField extends StatelessWidget {
     required this.controller,
     required this.hintText,
     this.validator,
+    this.onSave,
   });
 
   @override
@@ -26,6 +28,7 @@ class PasswordTextField extends StatelessWidget {
         return TextFormField(
           controller: controller,
           obscureText: obscureText,
+          onSaved: onSave,
           decoration: InputDecoration(
             hintText: hintText,
             contentPadding: EdgeInsets.symmetric(
