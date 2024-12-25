@@ -6,7 +6,8 @@ class GlobalDialog {
   final BuildContext context;
   final Widget? header;
   final String title;
-  final String? description;
+  final String? descriptionTitle;
+  final Widget? description;
   final Widget? mainButton;
 
   final Widget? secondaryButton;
@@ -16,9 +17,11 @@ class GlobalDialog {
     this.secondaryButton,
     this.mainButton,
     required this.title,
+    this.descriptionTitle,
     this.description,
     required this.header,
-  });
+  }) : assert(!(description != null && descriptionTitle != null),
+            'Declaring both descriptionTitle and description is not supported.');
   Future<dynamic> show() {
     return showDialog(
       context: context,
@@ -54,15 +57,16 @@ class GlobalDialog {
                     ),
                   ),
                 ),
-                if (description != null)
+                if (descriptionTitle != null || description != null)
                   SizedBox(
                     height: 14.h,
                   ),
-                if (description != null)
+                if (description != null) description!,
+                if (descriptionTitle != null)
                   SizedBox(
                     width: double.infinity,
                     child: Text(
-                      description!,
+                      descriptionTitle!,
                       style: TextStyle(fontSize: 14.sp),
                       textAlign: TextAlign.center,
                     ),
