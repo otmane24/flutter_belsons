@@ -36,8 +36,8 @@ class SecondaryButton extends StatelessWidget {
           title,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 18.sp,
+            fontWeight: FontWeight.w500,
+            fontSize: 14.sp,
             color: borderColor,
           ),
         ),

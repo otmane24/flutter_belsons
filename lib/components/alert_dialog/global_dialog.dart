@@ -74,7 +74,7 @@ class GlobalDialog {
                 if (mainButton != null) mainButton!,
                 if (secondaryButton != null) ...[
                   Divider(
-                    height: 8.h,
+                    height: 16.h,
                   ),
                   secondaryButton!
                 ],
