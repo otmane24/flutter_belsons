@@ -7,6 +7,7 @@ class GlobalDialog {
   final Widget? header;
   final String title;
   final String? descriptionTitle;
+  final EdgeInsets? contentPadding;
   final Widget? description;
   final Widget? mainButton;
 
@@ -18,6 +19,7 @@ class GlobalDialog {
     this.mainButton,
     required this.title,
     this.descriptionTitle,
+    this.contentPadding,
     this.description,
     required this.header,
   }) : assert(!(description != null && descriptionTitle != null),
@@ -40,20 +42,26 @@ class GlobalDialog {
                 SizedBox(
                   height: 16.h,
                 ),
-                Center(
-                  child: header,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Center(
+                    child: header,
+                  ),
                 ),
                 SizedBox(
                   height: 12.h,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.bold,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -61,26 +69,44 @@ class GlobalDialog {
                   SizedBox(
                     height: 14.h,
                   ),
-                if (description != null) description!,
+                if (description != null)
+                  Padding(
+                    padding: contentPadding ??
+                        EdgeInsets.symmetric(horizontal: 24.w),
+                    child: description!,
+                  ),
                 if (descriptionTitle != null)
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text(
-                      descriptionTitle!,
-                      style: TextStyle(fontSize: 14.sp),
-                      textAlign: TextAlign.center,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        descriptionTitle!,
+                        style: TextStyle(fontSize: 14.sp),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 if (mainButton != null)
                   SizedBox(
                     height: 20.h,
                   ),
-                if (mainButton != null) mainButton!,
-                if (secondaryButton != null) ...[
-                  Divider(
-                    height: 16.h,
+                if (mainButton != null)
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: mainButton!,
                   ),
-                  secondaryButton!
+                if (secondaryButton != null) ...[
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 28.w),
+                    child: Divider(
+                      height: 16.h,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    child: secondaryButton!,
+                  )
                 ],
                 SizedBox(
                   height: 12.h,
