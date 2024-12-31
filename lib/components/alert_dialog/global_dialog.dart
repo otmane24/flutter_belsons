@@ -34,85 +34,82 @@ class GlobalDialog {
           contentPadding: EdgeInsets.zero,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
-          content: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  height: 16.h,
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 16.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Center(
+                  child: header,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Center(
-                    child: header,
+              ),
+              SizedBox(
+                height: 12.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
+              ),
+              if (descriptionTitle != null || description != null)
                 SizedBox(
-                  height: 12.h,
+                  height: 14.h,
                 ),
+              if (description != null)
+                Padding(
+                  padding:
+                      contentPadding ?? EdgeInsets.symmetric(horizontal: 24.w),
+                  child: description!,
+                ),
+              if (descriptionTitle != null)
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: SizedBox(
                     width: double.infinity,
                     child: Text(
-                      title,
+                      descriptionTitle!,
+                      style: TextStyle(fontSize: 14.sp),
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                   ),
                 ),
-                if (descriptionTitle != null || description != null)
-                  SizedBox(
-                    height: 14.h,
-                  ),
-                if (description != null)
-                  Padding(
-                    padding: contentPadding ??
-                        EdgeInsets.symmetric(horizontal: 24.w),
-                    child: description!,
-                  ),
-                if (descriptionTitle != null)
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        descriptionTitle!,
-                        style: TextStyle(fontSize: 14.sp),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                if (mainButton != null)
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                if (mainButton != null)
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: mainButton!,
-                  ),
-                if (secondaryButton != null) ...[
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 28.w),
-                    child: Divider(
-                      height: 16.h,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: secondaryButton!,
-                  )
-                ],
+              if (mainButton != null)
                 SizedBox(
-                  height: 12.h,
+                  height: 20.h,
                 ),
+              if (mainButton != null)
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: mainButton!,
+                ),
+              if (secondaryButton != null) ...[
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 28.w),
+                  child: Divider(
+                    height: 16.h,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: secondaryButton!,
+                )
               ],
-            ),
+              SizedBox(
+                height: 12.h,
+              ),
+            ],
           ),
         );
       },
