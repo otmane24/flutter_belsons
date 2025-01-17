@@ -70,6 +70,7 @@ class DatePickerAdaptive {
           );
         },
       );
+      return selectedDate;
     } else {
       return await showDatePicker(
         context: context,
