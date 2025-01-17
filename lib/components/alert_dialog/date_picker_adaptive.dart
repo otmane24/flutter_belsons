@@ -47,31 +47,21 @@ class DatePickerAdaptive {
                       ),
                     ),
                     const Divider(height: 1, thickness: 1, color: Colors.grey),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CupertinoButton(
-                          child: const Text(
-                            "Cancel",
-                            style: TextStyle(color: CupertinoColors.systemRed),
+                    Center(
+                      child: CupertinoButton(
+                        child: const Text(
+                          "Done",
+                          style: TextStyle(
+                            color: CupertinoColors.activeBlue,
+                            fontWeight: FontWeight.bold,
                           ),
-                          onPressed: () => Navigator.of(context).pop(),
                         ),
-                        CupertinoButton(
-                          child: const Text(
-                            "Done",
-                            style: TextStyle(
-                              color: CupertinoColors.activeBlue,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pop(
-                              selectedDate,
-                            );
-                          },
-                        ),
-                      ],
+                        onPressed: () {
+                          Navigator.of(context).pop(
+                            selectedDate,
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),
