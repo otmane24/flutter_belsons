@@ -15,6 +15,7 @@ class DatePickerAdaptive {
     if (Platform.isIOS) {
       DateTime? selectedDate = initialDate ?? DateTime.now();
       await showCupertinoModalPopup<DateTime?>(
+        barrierDismissible: false,
         context: context,
         builder: (BuildContext builder) {
           return Container(
