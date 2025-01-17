@@ -80,8 +80,6 @@ class DatePickerAdaptive {
           );
         },
       );
-
-      return selectedDate;
     } else {
       return await showDatePicker(
         context: context,
@@ -90,5 +88,6 @@ class DatePickerAdaptive {
         lastDate: DateTime(2101),
       );
     }
+    return null;
   }
 }
